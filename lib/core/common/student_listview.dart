@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listview_class/model/student.dart';
+import 'package:listview/model/student.dart';
 
 class StudentListView extends StatelessWidget {
   const StudentListView({
