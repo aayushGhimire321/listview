@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:listview_class/core/common/student_listview.dart';
-import 'package:listview_class/model/student.dart';
+import 'package:listview/model/student.dart';
+
+import '../core/common/student_listview.dart';
 
 class StudentOutputView extends StatefulWidget {
   const StudentOutputView({super.key});
