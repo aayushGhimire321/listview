@@ -1,5 +1,8 @@
+
 import 'package:flutter/material.dart';
-import 'package:listview/model/student.dart';
+
+import '../../model/student.dart';
+import '../../view/student_single_view.dart';
 
 class StudentListView extends StatelessWidget {
   const StudentListView({
@@ -17,15 +20,23 @@ class StudentListView extends StatelessWidget {
         itemCount: lstStudents.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: const Icon(Icons.abc_outlined),
-            title:
-            Text('${lstStudents[index].fname} ${lstStudents[index].lname}'),
-            subtitle: Text(lstStudents[index].city),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.delete),
-            ),
-          );
+              leading: const Icon(Icons.circle),
+              title: Text(
+                  '${lstStudents[index].fname} ${lstStudents[index].lname}'),
+              subtitle: Text(lstStudents[index].city),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.delete),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        StudentSingleView(student: lstStudents[index]),
+                  ),
+                );
+              });
         },
       ),
     );
