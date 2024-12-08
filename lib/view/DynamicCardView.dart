@@ -9,22 +9,25 @@ class DynamicCardView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Card View'),
       ),
-      body: const SafeArea(
+      body:  SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                MyCard(text: 'Card 1'),
-                MyCard(
-                  text: 'Card 2',
-                  color: Colors.blue,
-                ),
-                MyCard(
-                  text: 'Card 3',
-                ),
-                MyCard(
-                  text: 'Card 4',
-                  color: Colors.green,
-                ),
+                for(int i=1; i<5; i++) ...{
+                  MyCard(text: 'Card $i'),
+                },
+                // const MyCard(text: 'Card 1'),
+                // const MyCard(
+                //   text: 'Card 2',
+                //   color: Colors.blue,
+                // ),
+                // const MyCard(
+                //   text: 'Card 3',
+                // ),
+                // const MyCard(
+                //   text: 'Card 4',
+                //   color: Colors.green,
+                // ),
               ],
             ),
           )),
