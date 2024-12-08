@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:listview/core/common/student_listview.dart';
+import 'package:listview/view/student_single_view.dart';
 
 import '../model/student.dart';
 

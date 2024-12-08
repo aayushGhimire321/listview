@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:listview/view/cardview.dart';
 import 'package:listview/view/student_details_view.dart';
 import 'package:listview/view/student_output_view.dart';
 
@@ -9,8 +10,8 @@ void main() {
     MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const StudentDetailsView(),
-        '/output': (context) => const StudentOutputView(),
+        '/': (context) => const cardview(),
+        '/output': (context) => const cardview(),
       },
     ),
   );

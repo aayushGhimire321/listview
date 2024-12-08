@@ -1,30 +1,43 @@
 import 'package:flutter/material.dart';
 
-import '../model/student.dart';
+import '../../model/student.dart';
 
-class StudentSingleView extends StatelessWidget {
-  final Student student;
+import '../core/common/student_listview.dart';
 
-  const StudentSingleView({
+class StudentListView extends StatelessWidget {
+  const StudentListView({
     super.key,
-    required this.student,
+    required this.lstStudents,
   });
+
+  final List<Student> lstStudents;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Name: ${student.fname} ${student.lname}',
-                style: TextStyle(fontSize: 20)),
-            SizedBox(height: 10),
-            Text('City: ${student.city}', style: TextStyle(fontSize: 18)),
-          ],
-        ),
+    return Expanded(
+      child: ListView.separated(
+        separatorBuilder: (context, index) => const Divider(),
+        itemCount: lstStudents.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+              leading: const Icon(Icons.circle),
+              title: Text(
+                  '${lstStudents[index].fname} ${lstStudents[index].lname}'),
+              subtitle: Text(lstStudents[index].city),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.delete),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        StudentSingleView(student: lstStudents[index]),
+                  ),
+                );
+              });
+        },
       ),
     );
   }
