@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CardView extends StatelessWidget {
-  const CardView({super.key});
+class DynamicCardView extends StatelessWidget {
+  const DynamicCardView({super.key});
 
   @override
   Widget build(BuildContext context) {

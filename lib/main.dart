@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:listview/view/DynamicCardView.dart';
 import 'package:listview/view/cardview.dart';
 import 'package:listview/view/student_details_view.dart';
 import 'package:listview/view/student_output_view.dart';
@@ -10,8 +11,8 @@ void main() {
     MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const cardview(),
-        '/output': (context) => const cardview(),
+        '/': (context) => const DynamicCardView(),
+        '/output': (context) => const DynamicCardView(),
       },
     ),
   );
