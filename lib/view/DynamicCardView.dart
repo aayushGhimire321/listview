@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/common/snackbar.dart';
+
 class DynamicCardView extends StatelessWidget {
   const DynamicCardView({super.key});
 
@@ -9,14 +11,18 @@ class DynamicCardView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Card View'),
       ),
-      body:  SafeArea(
+      body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                for(int i=1; i<5; i++) ...{
-                  MyCard(text: 'Card $i'),
-                },
-                // const MyCard(text: 'Card 1'),
+                for (int i = 1; i < 6; i++) ...{
+                  GestureDetector(
+                    onDoubleTap: () {
+                      showMySnackBar(context, 'Card $i Clicked');
+                    },
+                    child: MyCard(text: 'card $i'),
+                  )
+                }
                 // const MyCard(
                 //   text: 'Card 2',
                 //   color: Colors.blue,
